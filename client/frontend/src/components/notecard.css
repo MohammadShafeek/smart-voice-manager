@@ -1,0 +1,858 @@
+/* =========================================================
+   NOTE CARD
+========================================================= */
+
+.note-card {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  background: #111c2d;
+  border: 1px solid #243247;
+  border-radius: 16px;
+
+  padding: 22px;
+  margin-bottom: 18px;
+
+  position: relative;
+  z-index: 1;
+
+  overflow: visible;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.note-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  z-index: 10;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.note-card-header {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.note-card-title-area {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.note-card-icon {
+  width: 44px;
+  height: 44px;
+
+  flex: 0 0 44px;
+
+  border-radius: 11px;
+
+  background: #172a46;
+  border: 1px solid #2b5da8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+}
+
+.note-card-heading {
+  min-width: 0;
+  flex: 1;
+}
+
+.note-card-heading h3 {
+  margin: 0 0 5px;
+
+  color: #f8fafc;
+  font-size: 18px;
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   DATE + DURATION
+========================================================= */
+
+.note-card-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  color: #64748b;
+  font-size: 12px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   THREE DOT MENU
+========================================================= */
+
+.note-card-menu {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  z-index: 100;
+}
+
+.note-card-menu-btn {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #94a3b8;
+
+  font-size: 23px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.note-card-menu-btn:hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.note-card-dropdown {
+  position: absolute;
+
+  top: 40px;
+  right: 0;
+
+  width: 220px;
+  max-width: calc(100vw - 30px);
+  max-height: 360px;
+
+  background: #0f172a;
+
+  border: 1px solid #263244;
+  border-radius: 10px;
+
+  padding: 5px;
+
+  z-index: 9999;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DROPDOWN SCROLLBAR
+========================================================= */
+
+.note-card-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.note-card-dropdown::-webkit-scrollbar-track {
+  background: #0b1220;
+  border-radius: 10px;
+}
+
+.note-card-dropdown::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+.note-card-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+
+/* =========================================================
+   DROPDOWN BUTTONS
+========================================================= */
+
+.note-card-dropdown > button {
+  width: 100%;
+  min-height: 40px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #cbd5e1;
+
+  text-align: left;
+
+  padding: 10px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  display: block;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.note-card-dropdown > button:hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MOVE TO FOLDER
+========================================================= */
+
+.move-folder-section {
+  padding: 10px 12px;
+
+  border-top: 1px solid #243247;
+
+  margin-top: 6px;
+}
+
+.move-folder-section label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.move-folder-section select {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 9px 10px;
+
+  background: #0b1220;
+
+  border: 1px solid #263244;
+  border-radius: 7px;
+
+  color: #f8fafc;
+
+  outline: none;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.move-folder-section select:focus {
+  border-color: #3b82f6;
+}
+
+
+/* =========================================================
+   TAGS SECTION
+========================================================= */
+
+.note-tags-section {
+  padding: 10px 12px;
+
+  border-top: 1px solid #243247;
+
+  margin-top: 6px;
+}
+
+.note-tags-section > label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.note-tags-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.note-tag-option {
+  display: flex !important;
+
+  align-items: center;
+
+  gap: 8px;
+
+  cursor: pointer;
+
+  color: #cbd5e1 !important;
+
+  font-size: 13px !important;
+
+  margin: 0 !important;
+}
+
+.note-tag-option input {
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.no-tags-message {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   AUDIO
+========================================================= */
+
+.note-card-audio-wrapper {
+  width: 100%;
+  max-width: 100%;
+
+  box-sizing: border-box;
+
+  margin-bottom: 18px;
+
+  overflow: hidden;
+}
+
+.note-card-audio {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TRANSCRIPT
+========================================================= */
+
+.note-card-transcript {
+  width: 100%;
+  max-width: 100%;
+
+  box-sizing: border-box;
+
+  background: #0b1220;
+
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+
+  padding: 15px;
+
+  overflow-wrap: anywhere;
+}
+
+.note-card-transcript-title {
+  color: #60a5fa;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 7px;
+}
+
+.note-card-transcript p {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   TEXT NOTE
+========================================================= */
+
+.note-card-text {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-wrap: anywhere;
+}
+
+.note-card-text-title {
+  color: #60a5fa;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 7px;
+}
+
+.note-card-text p {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   EDIT AREA
+========================================================= */
+
+.note-card-edit-area {
+  width: 100%;
+  max-width: 100%;
+}
+
+.note-card-edit-input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 11px 13px;
+
+  background: #0b1220;
+  color: #f8fafc;
+
+  border: 1px solid #334155;
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  margin-bottom: 12px;
+}
+
+.note-card-edit-input:focus {
+  border-color: #3b82f6;
+}
+
+
+/* =========================================================
+   EDIT CONTENT
+========================================================= */
+
+.note-card-edit-content {
+  width: 100%;
+  min-height: 150px;
+
+  margin-top: 12px;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  background: #0b1220;
+
+  border: 1px solid #243247;
+  border-radius: 8px;
+
+  color: #f8fafc;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  resize: vertical;
+
+  outline: none;
+}
+
+.note-card-edit-content:focus {
+  border-color: #3b82f6;
+}
+
+
+/* =========================================================
+   EDIT BUTTONS
+========================================================= */
+
+.note-card-edit-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.note-card-save-btn,
+.note-card-cancel-btn {
+  min-width: 90px;
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.note-card-save-btn {
+  background: #2563eb;
+  color: #ffffff;
+
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+}
+
+.note-card-save-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+}
+
+.note-card-cancel-btn {
+  background: #1e293b;
+  color: #cbd5e1;
+
+  border: 1px solid #334155;
+}
+
+.note-card-cancel-btn:hover {
+  background: #334155;
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+.note-card-save-btn:active,
+.note-card-cancel-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SELECTED TAGS
+========================================================= */
+
+.note-card-selected-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 15px;
+}
+
+.note-card-tag {
+  padding: 5px 9px;
+
+  background: #172337;
+
+  border: 1px solid #263b58;
+
+  border-radius: 20px;
+
+  color: #60a5fa;
+
+  font-size: 12px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .note-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .note-card-header {
+    gap: 12px;
+    margin-bottom: 17px;
+  }
+
+  .note-card-heading h3 {
+    font-size: 17px;
+  }
+
+  .note-card-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .note-card-dropdown {
+    width: 210px;
+    max-width: calc(100vw - 24px);
+  }
+
+  .note-card-transcript {
+    padding: 14px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .note-card {
+    width: 100%;
+    padding: 14px;
+
+    border-radius: 13px;
+
+    margin-bottom: 14px;
+  }
+
+  .note-card-header {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .note-card-title-area {
+    gap: 8px;
+  }
+
+  .note-card-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    font-size: 17px;
+  }
+
+  .note-card-heading h3 {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .note-card-meta {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .note-card-menu-btn {
+    width: 34px;
+    height: 34px;
+
+    font-size: 21px;
+  }
+
+  .note-card-audio-wrapper {
+    margin-bottom: 14px;
+  }
+
+  .note-card-audio {
+    width: 100%;
+  }
+
+  .note-card-transcript {
+    padding: 12px;
+    border-radius: 9px;
+  }
+
+  .note-card-transcript p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .note-card-text p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .note-card-dropdown {
+    width: 200px;
+    max-width: calc(100vw - 24px);
+
+    max-height: 320px;
+  }
+
+  .move-folder-section,
+  .note-tags-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .note-card-edit-actions {
+    width: 100%;
+  }
+
+  .note-card-save-btn,
+  .note-card-cancel-btn {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .note-card {
+    padding: 12px;
+    border-radius: 11px;
+  }
+
+  .note-card-header {
+    gap: 6px;
+  }
+
+  .note-card-title-area {
+    gap: 7px;
+  }
+
+  .note-card-icon {
+    width: 35px;
+    height: 35px;
+
+    flex-basis: 35px;
+
+    font-size: 15px;
+  }
+
+  .note-card-heading h3 {
+    font-size: 15px;
+  }
+
+  .note-card-menu-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .note-card-dropdown {
+    width: 185px;
+    max-width: calc(100vw - 20px);
+  }
+
+  .note-card-edit-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .note-card-save-btn,
+  .note-card-cancel-btn {
+    width: 100%;
+    flex: none;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .note-card:hover {
+    transform: none;
+  }
+
+  .note-card-menu-btn {
+    min-width: 34px;
+    min-height: 34px;
+  }
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  .mobile-menu-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: auto;
+    min-width: 76px;
+    height: 40px;
+    padding: 8px 12px;
+    background: #162238;
+    color: #ffffff;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 1001;
+  }
+}

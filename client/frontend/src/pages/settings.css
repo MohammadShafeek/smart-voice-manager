@@ -1,0 +1,616 @@
+/* =========================================================
+   SETTINGS PAGE
+========================================================= */
+
+.settings-page {
+  width: 100%;
+  min-height: 100%;
+
+  box-sizing: border-box;
+
+  padding: 32px;
+
+  overflow-x: hidden;
+}
+
+.settings-container {
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.settings-header {
+  margin-bottom: 28px;
+}
+
+.settings-header h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.settings-header p {
+  margin: 8px 0 0;
+
+  color: #8f98a8;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.settings-section {
+  margin-bottom: 20px;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  background: #151a22;
+
+  border: 1px solid #252c38;
+  border-radius: 14px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.settings-section-title {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #252c38;
+}
+
+.settings-section-title > svg {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: #6ea8fe;
+}
+
+.settings-section-title h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.settings-section-title p {
+  margin: 5px 0 0;
+
+  color: #858e9d;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROFILE FORM
+========================================================= */
+
+.settings-form {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  padding-top: 22px;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.settings-field label {
+  color: #c8ced8;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.settings-field input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  background: #10151d;
+
+  border: 1px solid #303846;
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.settings-field input:focus {
+  border-color: #6ea8fe;
+
+  box-shadow:
+    0 0 0 3px rgba(110, 168, 254, 0.08);
+}
+
+.settings-field input::placeholder {
+  color: #697383;
+}
+
+
+/* =========================================================
+   PREFERENCES
+========================================================= */
+
+.settings-options {
+  padding-top: 8px;
+}
+
+.settings-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid #252c38;
+}
+
+.settings-option:last-child {
+  border-bottom: none;
+}
+
+.settings-option > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.settings-option strong {
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1.4;
+}
+
+.settings-option span {
+  color: #7f8897;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TOGGLE
+========================================================= */
+
+.settings-toggle {
+  width: 46px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  padding: 3px;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #343b47;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease;
+}
+
+.settings-toggle span {
+  display: block;
+
+  width: 19px;
+  height: 19px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.settings-toggle.active {
+  background: #4f8cff;
+}
+
+.settings-toggle.active span {
+  transform: translateX(21px);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.settings-option select {
+  min-width: 150px;
+
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+
+  background: #10151d;
+
+  border: 1px solid #303846;
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease;
+}
+
+.settings-option select:focus {
+  border-color: #6ea8fe;
+}
+
+
+/* =========================================================
+   DATA MANAGEMENT
+========================================================= */
+
+.settings-danger-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 22px;
+}
+
+.settings-danger-box > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.settings-danger-box strong {
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.settings-danger-box span {
+  color: #7f8897;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.settings-danger-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+
+  padding: 10px 14px;
+
+  background: #29191c;
+
+  color: #ff8d96;
+
+  border: 1px solid #63343a;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.settings-danger-btn:hover {
+  background: #381e22;
+
+  border-color: #8a4149;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.settings-about {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  padding-top: 22px;
+}
+
+.settings-about div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.settings-about span {
+  color: #7f8897;
+
+  font-size: 12px;
+}
+
+.settings-about strong {
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.settings-save-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 20px;
+
+  padding: 10px 18px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.settings-save-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+.settings-save-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+  .settings-page {
+    padding: 22px 16px;
+  }
+
+  .settings-header h1 {
+    font-size: 26px;
+  }
+
+  .settings-form {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-about {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+  .settings-page {
+    padding: 20px 14px;
+  }
+
+  .settings-header {
+    margin-bottom: 22px;
+  }
+
+  .settings-header h1 {
+    font-size: 24px;
+  }
+
+  .settings-header p {
+    font-size: 13px;
+  }
+
+  .settings-section {
+    padding: 18px;
+
+    border-radius: 12px;
+  }
+
+  .settings-section-title {
+    gap: 11px;
+
+    padding-bottom: 17px;
+  }
+
+  .settings-section-title h2 {
+    font-size: 16px;
+  }
+
+  .settings-section-title p {
+    font-size: 12px;
+  }
+
+  .settings-option {
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .settings-option > div {
+    flex: 1;
+  }
+
+  .settings-option select {
+    min-width: 130px;
+  }
+
+  .settings-danger-box {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .settings-danger-btn {
+    width: 100%;
+  }
+
+  .settings-save-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .settings-page {
+    padding: 18px 12px;
+  }
+
+  .settings-section {
+    padding: 16px;
+  }
+
+  .settings-option {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .settings-toggle {
+    align-self: flex-start;
+  }
+
+  .settings-option select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .settings-about {
+    gap: 15px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  .settings-danger-btn:hover {
+    background: #29191c;
+    border-color: #63343a;
+  }
+
+  .settings-save-btn:hover {
+    background: #2563eb;
+    transform: none;
+  }
+}

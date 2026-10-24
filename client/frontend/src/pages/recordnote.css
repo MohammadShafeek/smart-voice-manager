@@ -1,0 +1,857 @@
+/* =========================================================
+   RECORD PAGE
+========================================================= */
+
+.record-page {
+  width: 100%;
+  min-height: calc(100vh - 73px);
+
+  box-sizing: border-box;
+
+  background-color: #080d18;
+
+  padding: 30px 40px 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   RECORD CARD
+========================================================= */
+
+.record-card {
+  width: 100%;
+  max-width: 650px;
+
+  box-sizing: border-box;
+
+  background-color: #111c2d;
+
+  border: 1px solid #243247;
+  border-radius: 20px;
+
+  padding: 45px 35px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.record-card h1 {
+  margin: 0 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+.record-card > p {
+  margin: 0 0 25px;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   INPUT GROUP
+========================================================= */
+
+.input-group {
+  width: 100%;
+  max-width: 450px;
+
+  box-sizing: border-box;
+
+  margin: 0 auto 30px;
+
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 13px 15px;
+
+  background: #0b1220;
+
+  border: 1px solid #334155;
+  border-radius: 10px;
+
+  color: #f8fafc;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-group input::placeholder {
+  color: #64748b;
+}
+
+.input-group input:focus {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+
+/* =========================================================
+   MICROPHONE
+========================================================= */
+
+.mic-circle {
+  width: 110px;
+  height: 110px;
+
+  margin: 0 auto 25px;
+
+  border-radius: 50%;
+
+  background: #172a46;
+
+  border: 2px solid #3b82f6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+
+  box-shadow:
+    0 0 25px rgba(59, 130, 246, 0.2);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   RECORDING STATE
+========================================================= */
+
+.mic-circle.recording {
+  border-color: #ef4444;
+
+  background: #3f1720;
+
+  animation: recordingPulse 1.5s infinite;
+}
+
+@keyframes recordingPulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(239, 68, 68, 0.5);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 18px rgba(239, 68, 68, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+.timer {
+  margin-bottom: 25px;
+
+  color: #f8fafc;
+
+  font-size: 38px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   WAVEFORM
+========================================================= */
+
+.waveform {
+  height: 50px;
+
+  margin-bottom: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+.waveform span {
+  width: 4px;
+  height: 12px;
+
+  background: #3b82f6;
+
+  border-radius: 5px;
+}
+
+.waveform.active span {
+  animation:
+    waveform 0.8s ease-in-out infinite alternate;
+}
+
+.waveform.active span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.waveform.active span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.waveform.active span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.waveform.active span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes waveform {
+  from {
+    height: 10px;
+  }
+
+  to {
+    height: 40px;
+  }
+}
+
+
+/* =========================================================
+   START BUTTON
+========================================================= */
+
+.start-btn {
+  min-height: 44px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  padding: 13px 30px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.start-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+}
+
+
+/* Recording button state */
+
+.mic-circle.recording ~ .start-btn {
+  background: #ef4444;
+}
+
+.mic-circle.recording ~ .start-btn:hover {
+  background: #dc2626;
+}
+
+
+/* =========================================================
+   AUDIO PREVIEW
+========================================================= */
+
+.audio-preview {
+  width: 100%;
+
+  margin-top: 20px;
+}
+
+.audio-preview audio {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   TRANSCRIPT
+========================================================= */
+
+.note-transcript {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin: 25px auto 0;
+
+  padding: 14px;
+
+  background: #0b1220;
+
+  border: 1px solid #263244;
+  border-radius: 12px;
+
+  text-align: left;
+
+  overflow-wrap: anywhere;
+}
+
+.note-transcript p {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   SAVE NOTE BUTTON
+========================================================= */
+
+.save-note-btn {
+  display: block;
+
+  width: 100%;
+  max-width: 220px;
+
+  margin: 20px auto 0;
+
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.save-note-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+.save-note-btn:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 8px rgba(37, 99, 235, 0.2);
+}
+
+
+/* =========================================================
+   SAVED VOICE NOTES
+========================================================= */
+
+.saved-notes {
+  width: 100%;
+  max-width: 650px;
+
+  margin-top: 15px;
+}
+
+.saved-notes h2 {
+  margin: 0 0 12px;
+
+  color: #f8fafc;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SAVED NOTE CARD
+========================================================= */
+
+.saved-note {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-bottom: 12px;
+
+  padding: 18px 20px;
+
+  background: #111c2d;
+
+  border: 1px solid #243247;
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+.saved-note h3 {
+  margin: 0 0 12px;
+
+  color: #f8fafc;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+}
+
+.saved-note p {
+  margin: 8px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.saved-note audio {
+  width: 100%;
+  max-width: 100%;
+
+  height: 38px;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.edit-btn {
+  margin-top: 12px;
+  margin-right: 8px;
+
+  padding: 8px 16px;
+
+  background: #172f52;
+
+  color: #60a5fa;
+
+  border: 1px solid #2563eb;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.delete-btn {
+  margin-top: 12px;
+  margin-left: 0;
+
+  padding: 8px 16px;
+
+  background: #3b1720;
+
+  color: #f87171;
+
+  border: 1px solid #7f1d1d;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   EDIT MODE
+========================================================= */
+
+.edit-input-field {
+  width: 100%;
+  height: 42px;
+
+  box-sizing: border-box;
+
+  margin: 0 0 12px;
+
+  padding: 10px 12px;
+
+  background: #0b1627;
+
+  color: #f8fafc;
+
+  border: 1px solid #2563eb;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit-input-field:focus {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.edit-input-field::placeholder {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.save-btn {
+  height: 38px;
+
+  margin-right: 8px;
+
+  padding: 8px 18px;
+
+  background: #22c55e;
+
+  color: #ffffff;
+
+  border: none;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.save-btn:hover {
+  background: #16a34a;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.cancel-btn {
+  height: 38px;
+
+  padding: 8px 18px;
+
+  background: #1e293b;
+
+  color: #cbd5e1;
+
+  border: 1px solid #334155;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background: #334155;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .record-page {
+    padding: 30px 25px 45px;
+  }
+
+  .record-card {
+    max-width: 650px;
+
+    padding: 40px 30px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .record-page {
+    min-height: calc(100vh - 60px);
+
+    padding: 20px 15px 40px;
+  }
+
+  .record-card {
+    padding: 35px 20px;
+
+    border-radius: 16px;
+  }
+
+  .record-card h1 {
+    font-size: 25px;
+  }
+
+  .record-card > p {
+    font-size: 14px;
+
+    margin-bottom: 25px;
+  }
+
+  .mic-circle {
+    width: 90px;
+    height: 90px;
+
+    font-size: 34px;
+
+    margin-bottom: 22px;
+  }
+
+  .timer {
+    font-size: 32px;
+
+    margin-bottom: 20px;
+  }
+
+  .waveform {
+    margin-bottom: 28px;
+  }
+
+  .input-group {
+    max-width: 100%;
+
+    margin-bottom: 25px;
+  }
+
+  .start-btn {
+    width: 100%;
+
+    padding: 12px 20px;
+  }
+
+  .saved-notes {
+    width: 100%;
+
+    margin-top: 20px;
+  }
+
+  .saved-note {
+    padding: 15px;
+  }
+
+  .saved-note audio {
+    height: 40px;
+  }
+
+  .note-transcript {
+    padding: 12px;
+  }
+
+  .note-transcript p {
+    font-size: 13px;
+  }
+
+  .save-note-btn {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .record-page {
+    padding: 18px 12px 35px;
+  }
+
+  .record-card {
+    padding: 28px 15px;
+  }
+
+  .record-card h1 {
+    font-size: 23px;
+  }
+
+  .record-card > p {
+    font-size: 13px;
+  }
+
+  .mic-circle {
+    width: 82px;
+    height: 82px;
+
+    font-size: 30px;
+  }
+
+  .timer {
+    font-size: 28px;
+  }
+
+  .waveform {
+    gap: 4px;
+  }
+
+  .waveform span {
+    width: 3px;
+  }
+
+  .edit-btn,
+  .delete-btn,
+  .save-btn,
+  .cancel-btn {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  .start-btn:hover {
+    background: #2563eb;
+    transform: none;
+  }
+
+  .edit-btn:hover {
+    background: #172f52;
+    color: #60a5fa;
+  }
+
+  .delete-btn:hover {
+    background: #3b1720;
+    color: #f87171;
+  }
+
+  .save-btn:hover {
+    background: #22c55e;
+  }
+
+  .cancel-btn:hover {
+    background: #1e293b;
+    color: #cbd5e1;
+  }
+
+  .save-note-btn:hover {
+    background: #2563eb;
+    transform: none;
+  }
+}

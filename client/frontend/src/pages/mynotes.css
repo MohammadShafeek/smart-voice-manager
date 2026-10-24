@@ -1,0 +1,457 @@
+/* =========================================================
+   MY NOTES PAGE
+========================================================= */
+
+.my-notes-page {
+  width: 100%;
+  min-height: calc(100vh - 73px);
+
+  box-sizing: border-box;
+
+  background: #080d18;
+
+  padding: 40px 30px;
+
+  overflow-x: hidden;
+}
+
+.my-notes-container {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.my-notes-header {
+  margin-bottom: 25px;
+}
+
+.my-notes-header h1 {
+  margin: 0 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.my-notes-header p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SEARCH + FILTER SECTION
+========================================================= */
+
+.notes-filter-section {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-bottom: 25px;
+
+  padding: 18px;
+
+  background: #111c2d;
+
+  border: 1px solid #243247;
+  border-radius: 16px;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.notes-search-box {
+  width: 100%;
+  height: 48px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 15px;
+
+  background: #0b1424;
+
+  border: 1px solid #2a3a52;
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.notes-search-box:focus-within {
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.search-icon {
+  flex-shrink: 0;
+
+  margin-right: 10px;
+
+  font-size: 17px;
+}
+
+.notes-search-box input {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #f8fafc;
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.notes-search-box input::placeholder {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   FILTER ROW
+========================================================= */
+
+.notes-filter-row {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 14px;
+}
+
+.notes-filter-row select {
+  min-width: 160px;
+  height: 42px;
+
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  background: #0b1424;
+
+  border: 1px solid #2a3a52;
+  border-radius: 9px;
+
+  color: #cbd5e1;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.notes-filter-row select:hover {
+  border-color: #3b82f6;
+}
+
+.notes-filter-row select:focus {
+  border-color: #3b82f6;
+}
+
+
+/* =========================================================
+   CLEAR FILTER BUTTON
+========================================================= */
+
+.clear-filters-btn {
+  height: 42px;
+
+  box-sizing: border-box;
+
+  padding: 0 16px;
+
+  border: 1px solid #334155;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #cbd5e1;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.clear-filters-btn:hover {
+  background: #1e293b;
+
+  border-color: #475569;
+
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   RESULT COUNT
+========================================================= */
+
+.notes-result-info {
+  margin-top: 14px;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.notes-result-info strong {
+  color: #cbd5e1;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   NOTES LIST
+========================================================= */
+
+.my-notes-list {
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-notes {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 60px 25px;
+
+  text-align: center;
+
+  background: #111c2d;
+
+  border: 1px solid #243247;
+  border-radius: 16px;
+}
+
+.empty-icon {
+  margin-bottom: 15px;
+
+  font-size: 45px;
+}
+
+.empty-notes h2 {
+  margin: 0 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 21px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.empty-notes p {
+  margin: 0 0 20px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   EMPTY STATE CLEAR BUTTON
+========================================================= */
+
+.empty-notes .clear-filters-btn {
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .my-notes-page {
+    min-height: calc(100vh - 64px);
+
+    padding: 32px 22px;
+  }
+
+  .my-notes-header h1 {
+    font-size: 28px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .my-notes-page {
+    min-height: calc(100vh - 60px);
+
+    padding: 30px 18px;
+  }
+
+  .my-notes-header {
+    margin-bottom: 20px;
+  }
+
+  .my-notes-header h1 {
+    font-size: 27px;
+  }
+
+  .my-notes-header p {
+    font-size: 14px;
+  }
+
+  .notes-filter-section {
+    padding: 14px;
+
+    border-radius: 14px;
+  }
+
+  .notes-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+  .notes-filter-row select,
+  .clear-filters-btn {
+    width: 100%;
+  }
+
+  .empty-notes {
+    padding: 50px 20px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .my-notes-page {
+    padding: 25px 12px;
+  }
+
+  .my-notes-header h1 {
+    font-size: 24px;
+  }
+
+  .my-notes-header p {
+    font-size: 13px;
+  }
+
+  .notes-search-box {
+    height: 45px;
+
+    padding: 0 12px;
+  }
+
+  .notes-search-box input {
+    font-size: 13px;
+  }
+
+  .notes-filter-section {
+    padding: 12px;
+
+    border-radius: 13px;
+  }
+
+  .notes-filter-row {
+    margin-top: 12px;
+  }
+
+  .notes-result-info {
+    font-size: 12px;
+  }
+
+  .empty-notes {
+    padding: 45px 18px;
+
+    border-radius: 13px;
+  }
+
+  .empty-icon {
+    font-size: 40px;
+  }
+
+  .empty-notes h2 {
+    font-size: 19px;
+  }
+
+  .empty-notes p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  .notes-filter-row select:hover {
+    border-color: #2a3a52;
+  }
+
+  .clear-filters-btn:hover {
+    background: transparent;
+    border-color: #334155;
+    color: #cbd5e1;
+  }
+}

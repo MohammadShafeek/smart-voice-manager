@@ -1,0 +1,397 @@
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  flex-direction: column;
+
+  background: #0b1424;
+  border-right: 1px solid #1e293b;
+
+  position: relative;
+  z-index: 100;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   SIDEBAR MENU
+========================= */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 16px;
+}
+
+
+/* =========================
+   SIDEBAR ITEM
+========================= */
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  width: 100%;
+  min-height: 58px;
+
+  padding: 12px 16px;
+
+  box-sizing: border-box;
+
+  color: #dbe4f0;
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.sidebar-item svg {
+  flex-shrink: 0;
+}
+
+.sidebar-item:hover {
+  background: #162238;
+  color: #ffffff;
+}
+
+.sidebar-item.active {
+  background: #172b4d;
+  color: #ffffff;
+}
+
+
+/* =========================
+   SIDEBAR BOTTOM
+========================= */
+
+.sidebar-bottom {
+  margin-top: auto;
+
+  padding: 20px 16px;
+
+  color: #64748b;
+
+  font-size: 12px;
+  text-align: center;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+   DESKTOP = HIDDEN
+========================= */
+
+.mobile-close-button {
+  display: none;
+
+  position: absolute;
+
+  top: 18px;
+  right: 16px;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: #162238;
+  color: #ffffff;
+
+  border: 1px solid #334155;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+.mobile-close-button:hover {
+  background: #243653;
+}
+
+
+/* =========================
+   MOBILE OVERLAY
+   HIDDEN BY DEFAULT
+========================= */
+
+.mobile-menu-overlay {
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  z-index: 999;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 230px;
+    min-width: 230px;
+  }
+
+  .sidebar-menu {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .sidebar-item {
+    gap: 15px;
+    font-size: 16px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  /*
+    Sidebar is removed from normal layout
+    and stays hidden until Menu is clicked.
+  */
+
+  .sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    min-width: 280px;
+
+    height: 100vh;
+    min-height: 100vh;
+
+    transform: translateX(-100%);
+
+    background: #0b1424;
+
+    border-right: 1px solid #1e293b;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition: transform 0.25s ease;
+  }
+
+
+  /*
+    This class is added by Sidebar.jsx
+    when Menu button is clicked.
+  */
+
+  .sidebar.mobile-sidebar-open {
+    transform: translateX(0);
+  }
+
+
+  /*
+    Close button becomes visible
+    only on mobile.
+  */
+
+  .mobile-close-button {
+    display: flex;
+  }
+
+
+  /*
+    Sidebar menu starts below close button.
+  */
+
+  .sidebar-menu {
+    padding: 85px 16px 20px;
+  }
+
+
+  /*
+    Overlay only exists when menu is open.
+  */
+
+  .mobile-menu-overlay {
+    display: block;
+  }
+
+
+  .sidebar-item {
+    min-height: 54px;
+
+    padding: 12px 14px;
+
+    gap: 15px;
+
+    font-size: 16px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .sidebar {
+    width: 270px;
+    min-width: 270px;
+  }
+
+  .sidebar-menu {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sidebar-item {
+    min-height: 52px;
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   MOBILE SIDEBAR CONTROLS
+   ========================================================= */
+
+.mobile-close-button {
+  display: none;
+}
+
+.mobile-menu-overlay {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    min-width: 280px;
+    height: 100vh;
+
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+
+    z-index: 1000;
+  }
+
+  .sidebar.mobile-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .mobile-close-button {
+    display: flex;
+
+    position: absolute;
+    top: 18px;
+    right: 16px;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: #162238;
+    color: #ffffff;
+
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    z-index: 10;
+  }
+
+  .mobile-menu-overlay {
+    display: block;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 999;
+  }
+}
+
+/* Desktop: Cross hidden */
+.mobile-close-button {
+  display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .mobile-close-button {
+    display: flex !important;
+  }
+
+  .sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 280px !important;
+    min-width: 280px !important;
+    height: 100vh !important;
+    transform: translateX(-100%) !important;
+    z-index: 1000 !important;
+    transition: transform 0.25s ease !important;
+  }
+
+  .sidebar.mobile-sidebar-open {
+    transform: translateX(0) !important;
+  }
+
+  .mobile-menu-overlay {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999 !important;
+    background: rgba(0, 0, 0, 0.65);
+  }
+}
+/* Fix sidebar content position on laptop/desktop */
+@media (min-width: 701px) {
+  .sidebar-menu {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+  }
+}

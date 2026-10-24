@@ -1,0 +1,555 @@
+/* =========================================================
+   FOLDER DETAILS PAGE
+========================================================= */
+
+.folder-details-page {
+  width: 100%;
+  min-height: calc(100vh - 73px);
+  box-sizing: border-box;
+
+  background: #080d18;
+
+  padding: 40px 30px;
+
+  overflow-x: hidden;
+}
+
+.folder-details-container {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.folder-details-header {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.back-folder-btn {
+  display: inline-flex;
+  align-items: center;
+
+  border: none;
+  background: transparent;
+
+  color: #60a5fa;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  padding: 0;
+  margin-bottom: 25px;
+
+  transition: color 0.2s ease;
+}
+
+.back-folder-btn:hover {
+  color: #93c5fd;
+}
+
+
+/* =========================================================
+   FOLDER TITLE
+========================================================= */
+
+.folder-details-title {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  min-width: 0;
+}
+
+.folder-details-icon {
+  width: 55px;
+  height: 55px;
+
+  flex: 0 0 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #111c2d;
+
+  border: 1px solid #243247;
+  border-radius: 12px;
+
+  font-size: 28px;
+}
+
+.folder-details-title > div:last-child {
+  min-width: 0;
+}
+
+.folder-details-title h1 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  overflow-wrap: anywhere;
+}
+
+.folder-details-title p {
+  margin: 6px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   NOTES GRID
+========================================================= */
+
+.folder-notes-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  );
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NOTE CARD
+========================================================= */
+
+.folder-note-card {
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  padding: 22px;
+
+  background: #111c2d;
+
+  border: 1px solid #243247;
+  border-radius: 12px;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+.folder-note-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   NOTE HEADER
+========================================================= */
+
+.folder-note-header {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+
+  margin-bottom: 18px;
+}
+
+.folder-note-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #172337;
+
+  border-radius: 10px;
+
+  font-size: 20px;
+}
+
+.folder-note-header > div:last-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.folder-note-header h3 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.folder-note-header span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   NOTE CONTENT
+========================================================= */
+
+.folder-note-content {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  display: -webkit-box;
+-webkit-line-clamp: 5;
+-webkit-box-orient: vertical;
+line-clamp: 5;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   AUDIO
+========================================================= */
+
+.folder-note-audio {
+  width: 100%;
+
+  margin-top: 4px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+.folder-note-audio audio {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   TRANSCRIPT
+========================================================= */
+
+.folder-note-transcript {
+  width: 100%;
+
+  margin-top: 15px;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  background: #0b1220;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.folder-note-transcript strong {
+  color: #94a3b8;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.folder-note-transcript p {
+  margin: 6px 0 0;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   EMPTY FOLDER
+========================================================= */
+
+.empty-folder {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  padding: 70px 20px;
+
+  background: #111c2d;
+
+  border: 1px solid #243247;
+
+  border-radius: 12px;
+}
+
+.empty-folder-icon {
+  font-size: 45px;
+
+  margin-bottom: 15px;
+}
+
+.empty-folder h2 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.empty-folder p {
+  margin: 8px auto 0;
+
+  max-width: 450px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .folder-details-page {
+    min-height: calc(100vh - 64px);
+    padding: 32px 22px;
+  }
+
+  .folder-details-header {
+    margin-bottom: 28px;
+  }
+
+  .folder-notes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .folder-note-card {
+    padding: 18px;
+  }
+
+  .folder-note-header h3 {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .folder-details-page {
+    min-height: calc(100vh - 60px);
+    padding: 25px 15px;
+  }
+
+  .folder-details-header {
+    margin-bottom: 24px;
+  }
+
+  .back-folder-btn {
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+
+  .folder-details-title {
+    align-items: flex-start;
+    gap: 11px;
+  }
+
+  .folder-details-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-basis: 46px;
+
+    font-size: 23px;
+
+    border-radius: 10px;
+  }
+
+  .folder-details-title h1 {
+    font-size: 24px;
+  }
+
+  .folder-details-title p {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .folder-notes-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .folder-note-card {
+    padding: 16px;
+  }
+
+  .folder-note-header {
+    margin-bottom: 14px;
+  }
+
+  .folder-note-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+
+    font-size: 18px;
+  }
+
+  .folder-note-header h3 {
+    font-size: 15px;
+  }
+
+  .folder-note-content {
+    font-size: 13px;
+  }
+
+  .folder-note-transcript {
+    padding: 11px;
+  }
+
+  .folder-note-transcript p {
+    font-size: 13px;
+  }
+
+  .empty-folder {
+    padding: 50px 16px;
+  }
+
+  .empty-folder h2 {
+    font-size: 18px;
+  }
+
+  .empty-folder p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .folder-details-page {
+    padding: 20px 10px;
+  }
+
+  .folder-details-title {
+    gap: 9px;
+  }
+
+  .folder-details-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-basis: 42px;
+
+    font-size: 21px;
+  }
+
+  .folder-details-title h1 {
+    font-size: 21px;
+  }
+
+  .folder-note-card {
+    padding: 14px;
+  }
+
+  .folder-note-header {
+    gap: 9px;
+  }
+
+  .folder-note-icon {
+    width: 37px;
+    height: 37px;
+
+    flex-basis: 37px;
+
+    font-size: 16px;
+  }
+
+  .empty-folder {
+    padding: 40px 12px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  .folder-note-card:hover {
+    transform: none;
+  }
+}
