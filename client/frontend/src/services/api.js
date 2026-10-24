@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://smart-voice-manager.onrender.com/api";
 
 // Add the token to requests that require login.
 const getAuthHeaders = () => {
