@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNotes } from "../context/NotesContext";
 import { useNavigate } from "react-router-dom";
-import "./NoteCard.css";
+import "./notecard.css";
 
 function NoteCard({
   note,

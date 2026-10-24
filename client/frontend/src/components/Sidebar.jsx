@@ -9,7 +9,7 @@ import {
   Settings,
   X,
 } from "lucide-react";
-import "./Sidebar.css";
+import "./sidebar.css";
 
 function Sidebar({ isMobileMenuOpen, onClose }) {
   // Close the mobile sidebar after selecting a menu item.
